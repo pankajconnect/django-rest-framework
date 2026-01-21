@@ -861,3 +861,86 @@ Self-Healing Execution
 Verification & Learning Loop
 (Continuous Improvement)
 
+Slide 11 — How This Framework Differs from Monitoring Tools
+
+OEM / Datadog:
+
+Real-time monitoring
+
+Static thresholds
+
+Alert-only
+
+Tool-specific
+
+No automation loop
+
+Your Framework:
+
+Predictive (3 / 6 / 12 months)
+
+ML-based anomaly detection
+
+Root-cause insights
+
+Actionable recommendations
+
+Approval + self-healing
+
+Cross-DB normalization
+
+Closed-loop learning
+
+Slide 12 — Executive Value Summary
+
+Business Impact:
+
+Zero-incident capacity planning
+
+Reduced firefighting
+
+Lower storage costs
+
+Faster remediation
+
+Better accountability
+
+Strategic planning readiness
+
+Technical Impact:
+
+Unified cross-DB view
+
+AI-driven forecasting
+
+Automated remediation
+
+End-to-end capacity intelligence
+
+Optional: Framework Name for PPT
+
+Pick one for your slide header:
+
+DBForeSight AI Framework
+
+CapacityMind DB Framework
+
+ProactiDB Framework
+
+InsightCap AI Framework
+
+SmartCap DB Framework
+
+If You Want Next
+
+I can next:
+
+Compress this into a single-slide framework diagram
+
+Create a 2–3 slide executive version
+
+Create a technical architecture slide
+
+Create a product roadmap slide
+
+Tell me your audience (Executive / Technical / Mixed), and I’ll tailor it exactly for your PPT.
