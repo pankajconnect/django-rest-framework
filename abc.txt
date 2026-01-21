@@ -382,3 +382,100 @@ Convert recommendations into actionable playbooks (scripts/automation) that can 
 Reviewed and approved by DBAs/app owners, then
 Executed automatically (self-healing) and tracked end-to-end.
 Close the loop: detect → analyze → recommend → approve → execute → verify.
+
+┌──────────────────────────────┐
+│        Data Sources          │
+│                              │
+│  • Oracle OEM                │
+│  • Datadog                   │
+│  • Direct DB Queries         │
+│    (Oracle / MySQL / PG)     │
+└───────────────┬──────────────┘
+                │
+                ▼
+┌──────────────────────────────┐
+│       Ingestion Layer        │
+│                              │
+│  • Scheduled collectors      │
+│  • Normalize metrics         │
+│  • Map DB → Schema → Object  │
+└───────────────┬──────────────┘
+                │
+                ▼
+┌──────────────────────────────┐
+│ Central Capacity Warehouse   │
+│                              │
+│  • Historical storage data   │
+│  • DB / Schema / Object meta │
+│  • Growth metrics            │
+└───────────────┬──────────────┘
+                │
+                ▼
+┌──────────────────────────────┐
+│  Processing & ML Engine      │
+│                              │
+│  • Feature engineering       │
+│  • 3 / 6 / 12-month forecasts│
+│  • Anomaly detection         │
+│  • Large & fast-growing objs │
+│  • AI recommendations        │
+└───────────────┬──────────────┘
+                │
+        ┌───────┴─────────┐
+        │                 │
+        ▼                 ▼
+┌──────────────────┐   ┌──────────────────┐
+│ Forecasts &      │   │ Anomalies &      │
+│ Risk Scores      │   │ Recommendations  │
+└─────────┬────────┘   └─────────┬────────┘
+          │                      │
+          ▼                      ▼
+┌────────────────────────────────────┐
+│ API & Notification Layer           │
+│                                    │
+│  • REST / GraphQL APIs              │
+│  • Email / Ticket alerts           │
+│  • Approval workflow service       │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│ Dashboards & Users                  │
+│                                    │
+│  • Capacity overview               │
+│  • Growth trends                   │
+│  • Forecast curves                 │
+│  • Anomalies timeline              │
+│  • Recommendations list            │
+│                                    │
+│  Users: DBAs / SRE / App Teams      │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│ Approval Workflow                  │
+│                                    │
+│  • Approve / Reject / Modify       │
+│  • Attach change ticket ID         │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│ Self-Healing Execution Layer        │
+│                                    │
+│  • SQL scripts                     │
+│  • Ansible / Terraform             │
+│  • Cloud storage APIs              │
+│  • Archiving / Purge jobs          │
+│  • Storage resize                  │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│ Verification & Learning Loop       │
+│                                    │
+│  • Validate capacity improvement   │
+│  • Check anomaly resolution        │
+│  • Update ML models                │
+│  • Improve recommendations         │
+└────────────────────────────────────┘
